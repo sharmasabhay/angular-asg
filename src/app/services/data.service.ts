@@ -11,8 +11,8 @@ export class DataService {
     constructor(private http: Http) { }
     
     base_url = 'http://localhost:4200';
-    // api_url = 'http://ah.alcoholdelivery.com.sg';
-    api_url = 'http://localhost/api/index.php';
+    api_url = 'http://ah.alcoholdelivery.com.sg';
+    //api_url = 'http://localhost/api/index.php';
 
     getConstants() {
         let constants: any[] = [];

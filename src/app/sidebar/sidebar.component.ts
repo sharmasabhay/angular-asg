@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { UtilsService } from '../services/utils.service';
-import { CategoryService } from '../services/category.service';
+
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,14 +11,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-    categories: any[] = [];
-    category;
+    categories: any[] = [];  
 
-    constructor(public categoryService:CategoryService,private router: Router, public dataService:DataService, public utilsService:UtilsService, private activatedRoute: ActivatedRoute) { }
+    constructor(private router: Router, public dataService:DataService, public utilsService:UtilsService, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
-        this.categoryList();
-        this.category = categoryService.getCategories();
+        this.categoryList();        
     }
 
     categoryList(){

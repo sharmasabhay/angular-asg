@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UtilsService } from './services/utils.service';
 import { DataService } from './services/data.service';
 import { ApiService } from './services/api.service';
-import { CategoryService } from './services/category.service';
+
 
 @Component({
   selector: 'app-root',
@@ -19,14 +19,12 @@ export class AppComponent {
   constructor(
     public dataService:DataService, 
     public utilsService:UtilsService, 
-    public apiService:ApiService,
-    public categoryService:CategoryService
+    public apiService:ApiService   
   ){
       var deviceInfo = this.utilsService.getDevice();
       this.deviceInfo = deviceInfo.device;
       this.categoryList();
-      this.announcementBar();
-      this.getCategories();
+      this.announcementBar();      
   }
 
     categoryMenu(category){
@@ -48,12 +46,7 @@ export class AppComponent {
         );
     }
 
-    getCategories(){
-      this.apiService.categoryList()
-      .subscribe((data) => {
-        this.categoryService.setCategories(data);
-      })
-    }
+    
 
     announcementBar(){
         var params = {};

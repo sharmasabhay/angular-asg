@@ -9,9 +9,6 @@
  </a>
  </div>
  <div class="side-menu" id="divMenu">
-  <pre>
-  	{{category|json|async}}
-  </pre>	
   <ul>
     <li *ngFor="let category of categories, let i = index" [ngClass]="{'cat-link': 1 === 1, 'dropdown': category['subcategory_name'] != '', 'subcategory': category['subcategory']}">
     	<a routerLink="/collection/{{category['slug']}}" routerLinkActive="active-link" class="beforeroute">
